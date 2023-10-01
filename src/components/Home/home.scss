@@ -1,0 +1,231 @@
+/* @import "src/index.css"; */
+
+.home{
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(30, 68, 82);
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    mix-blend-mode: hard-light;
+  }
+
+  video{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;    
+  }
+
+  .home-content{
+    width: 100%;
+    height: max-content;
+    padding: 8rem 1.5rem 3rem;
+    display: flex;
+    row-gap: 3rem;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin: auto;
+    color: var(--whiteColor);
+    z-index: 100;
+  }
+
+  .text-div{
+    padding: 2rem 0;
+
+    .small-text{
+      font-size: .825rem;
+      text-transform: uppercase;
+    }
+    .home-title{
+      position: relative;
+      font-size: 1.8rem;
+    }
+  }
+
+  .card-div{
+    position: relative;
+    padding: 2rem 1rem;
+    background: var(--whiteColor);
+    border-radius: 10px;
+    gap: 1rem;
+
+    label{
+      display: block;
+      color: var(--textColor);
+      padding-bottom: 10px;
+      font-size: .825rem;
+      font-weight: 500;
+    }
+
+    .label-total{
+      justify-content: space-between;
+      align-items: center;
+      
+      .total{
+        color: var(--textColor);
+        font-size: 1.125rem;
+        padding-bottom: 10px;
+      }
+    }
+
+    .input{
+      height: 40px;
+      padding: 0 1rem;
+      background: var(--inputColor);
+      border-radius: 3rem;
+  
+      input{
+        background: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: .825rem;
+        font-weight: 500;
+        &::placeholder{
+          font-size: .825rem;
+        }
+      }
+      .icon{
+        font-size: 1.125rem;
+        color: var(--PrimaryColor) !important;
+        margin-left: 10px;
+      }
+  
+      .input[type=range]{
+        background: blue;
+      }
+    }
+  
+    .search-options{
+      position: absolute;
+      background: var(--gradientColor);
+      bottom: 0;
+      column-gap: .8em;
+      padding: .3em 1em;
+      border-radius: 3em;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      justify-content: center;
+      cursor: pointer;
+  
+      &:hover{
+        background: var(--PrimaryColor);
+      }
+  
+      .icon{
+        font-size: 1.125rem;
+      }
+      span{
+        font-size: .825rem;
+      }
+    }
+  }
+  
+  .home-footer-icons{
+    width: 100%;
+    justify-content: space-between;
+
+    .icon{
+      font-size: 1.25rem;
+      margin: 0 5px;
+      color: var(--whiteColor);
+      font-weight: 600;
+      &:hover{
+        color: var(--PrimaryColor)
+      }
+    }
+  }
+}
+
+/* MEDIA QUERIES ============================*/
+
+@media screen and (min-width: 500px){
+  .home{
+    .home-content{
+      .text-div{
+        .small-text{
+          font-size: 16px;
+        }
+
+        .home-title{
+          position: relative;
+          font-size: 2.3rem;
+          width: max-content;
+
+          &::after{
+            position: absolute;
+            content: "";
+            background: var(--SecondaryColor);
+            height: 5px;
+            width: 145px;
+            right: 0;
+            bottom: 5px;
+            z-index: -1;
+          }
+        }
+      }
+
+      .card-div{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:660px){
+  .home{
+    .home-content{
+      .card-div{
+        padding: 2rem 1rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 940px){
+  .home{
+    min-height: 70vh;
+  }
+}
+
+@media screen and (min-width: 1240px){
+  .home{
+    min-height: 80vh;
+
+    .home-content{
+      padding-left: 0;
+      padding-right: 0;
+
+      .card-div{
+        padding: 2rem 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        .input{
+          margin-bottom: 1rem;
+        }
+
+        .search-options{
+          bottom: -1rem;
+          padding: .5rem 1rem;
+
+          span{
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
