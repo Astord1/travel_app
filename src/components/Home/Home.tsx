@@ -1,4 +1,3 @@
-import React from 'react'
 import "./home.scss"
 import video from "assets/video/video.mp4";
 import {GrLocation} from "react-icons/gr"

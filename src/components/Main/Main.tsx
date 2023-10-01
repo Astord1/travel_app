@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import "./main.scss"
 import dataImp from "data/destinations.ts";
 import {HiOutlineLocationMarker, HiOutlineClipboardCheck} from "react-icons/hi"
@@ -15,7 +14,7 @@ type DestinationType  = {
   'description': string
 }
 const Main = () => {
-  const [data, setData] = useState<DestinationType[]>(dataImp)
+  const data:DestinationType[] = dataImp;
 
   useAos(500)
 
