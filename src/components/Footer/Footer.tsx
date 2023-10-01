@@ -1,4 +1,3 @@
-import React from 'react'
 import "./footer.scss"
 import video1 from "assets/video/video1.mp4"
 import { FiChevronRight, FiSend } from 'react-icons/fi'
